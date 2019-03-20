@@ -1,10 +1,5 @@
 #!/bin/bash
 
-echo -n "What is the ssh username? "
-read ssh_user
-echo -n "What is the ssh password? "
-read ssh_pass
-
 readonly IP_CACHE_FILE=.ips
 if [ ! -f $IP_CACHE_FILE ]
 then
@@ -19,6 +14,11 @@ else
 fi
 
 readarray -t ip_array <<< "$nmap_ips"
+
+echo -n "What is the ssh username? "
+read ssh_user
+echo -n "What is the ssh password? "
+read ssh_pass
 
 declare -a ip_host_mapping
 for ip in "${ip_array[@]}"
