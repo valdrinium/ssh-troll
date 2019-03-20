@@ -1,0 +1,16 @@
+export DISPLAY=:0
+xrandr -q | grep primary | awk -F ' ' '{print $1}' | xargs -l bash -c 'xargs xrandr --output $0 --rotate normal' | xargs
+
+sudo apt-get update
+sudo apt-get -y install xcowsay
+
+xcowsay -t 8 "Buna, sunt eu, Paula xD"
+xcowsay -t 8 "Ma intrebam oare... cum ar fi daca am sta cu susul in jos?"
+
+xrandr -q | grep primary | awk -F ' ' '{print $1}' | xargs -l bash -c 'xargs xrandr --output $0 --rotate inverted' | xargs
+xcowsay -t 8 "¿ᴉʇ ᴉs ʇᴉʇǝɯɐ ɯɐɔ ᴉɐ ɐɔ ɐsɐ ᴉ-nu 'nᴉɟԀ"
+xcowsay -t 8 "˙˙˙ɐunǝɹdɯᴉ ᴉᴉʇǝᴉʌ ᴉnlnsuǝs ɐɹdnsɐ uᴉʇnd ɯɐʇɐʇᴉpǝɯ ɐs ᴉɐH"
+
+xcowsay -t 8 "*: ǝuᴉʇ ǝp ǝɔɐld ᴉɯᴉ ɐɔ nɹʇuǝd ˙˙˙sɐl ǝʇ ɐɔ ᴉɐɥ 'ǝǝǝǝuᴉq"
+xrandr -q | grep primary | awk -F ' ' '{print $1}' | xargs -l bash -c 'xargs xrandr --output $0 --rotate normal' | xargs
+xcowsay -t 8 "Mai bineee? Muuuuu"
