@@ -1,5 +1,5 @@
 sudo chmod 666 /etc/apt/sources.list
-[[ $(lsb_release -a 2>/dev/null | grep Debian | wc -l) > 0 ]] && sudo echo -e "deb http://ftp.ro.debian.org/debian/ stable main contrib non-free\ndeb http://ftp.ro.debian.org/debian/ stable main contrib non-free" > /etc/apt/sources.list
+[[ $(lsb_release -a 2>/dev/null | grep Debian | wc -l) > 0 ]] && sudo echo -e "deb http://ftp.ro.debian.org/debian/ stable main contrib non-free\ndeb-src http://ftp.ro.debian.org/debian/ stable main contrib non-free" > /etc/apt/sources.list
 
 export DISPLAY=:0
 xrandr -q | grep connected | awk -F ' ' '{print $1}' | xargs -l bash -c 'xargs xrandr --output $0 --rotate normal' | xargs
