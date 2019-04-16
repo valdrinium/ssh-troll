@@ -6,7 +6,7 @@ then
     echo -n "What is the network ip? "
     read network_ip
 
-    nmap_ips=$(nmap -sn $network_ip 2>/dev/null | grep report | awk -F '(' '{print $2}' | awk -F ')' '{print $1}' | grep -v '^$')
+    nmap_ips=$(nmap -sn $network_ip 2>/dev/null | grep report | awk -F ' ' '{print $5}' | grep -oE "\b([0-9]{1,3}\.){3}[0-9]{1,3}\b" | grep -v '^$')
 
     echo "$nmap_ips" >> $IP_CACHE_FILE
 else
